@@ -2,7 +2,11 @@
 
 A coding companion ecosystem with many collectible species that hatch, grow, and evolve from real developer activity.
 
+> **Buddy is a creature you meet. TokePal is a creature you raise.**
+
 TokePals live in your terminal. You start with an egg. As you code, it grows. Over time it hatches into one of many species, levels up, evolves, and earns cosmetics — all driven by how you actually work, not by a separate game loop bolted on the side.
+
+**Privacy stance:** TokePal runs locally. Nothing leaves your machine. No accounts, no telemetry — ever.
 
 ---
 
@@ -144,43 +148,51 @@ A healthier formula: token usage contributes a lot, but XP and currency are shap
 
 ## Roadmap
 
-### V1 — Core
+Every version is evaluated against a single sentence: *does this strengthen "raise, don't meet"?* If not, it's cut or deferred. The full plan with stop-gates and rationale lives in [docs/ROADMAP.md](docs/ROADMAP.md). Open questions and decisions live in [docs/DECISIONS.md](docs/DECISIONS.md). A step-by-step V0–V1 walkthrough for collaborators is in [docs/PLAN.md](docs/PLAN.md).
 
-- Egg
-- Hatch
-- Many species
-- XP from token usage
-- Leveling
-- One evolution path
-- Subtle animation
-- Creature card
-- Simple soft currency
-- Basic cosmetics
+### V0 — Foundations
 
-### V1.5 — Depth
+Decisions and scaffolding before user-facing code: Claude Code hook as the surface, local-only storage, token ingestion from session transcripts, draft XP formula, behavior classifier sketch.
 
-- Trait rolls and personality tags
+### V1 — The Relationship
+
+Prove the core loop before adding anything else.
+
+- Single egg → hatch → one creature
+- Token usage → XP → leveling
+- **Behavior-driven evolution** (debug-path vs. ship-path) — the moat
+- Persistent state: days-alive, session count, streak
+- `tokepal status` with idle animation and level-up burst
+- 2 species at first evolution threshold; no currency, no cosmetics, no social
+
+**Stop gate:** dogfood 2 weeks. If users don't voluntarily check on their creature in week 2, fix V1 before moving on.
+
+### V1.5 — Depth of Identity
+
+- 3–5 species with distinct ASCII identities
+- Expanded evolution tree (4–6 end-states)
+- Trait rolls / personality tags
 - Session reactions
-- Milestone rewards
+- Creature card (terminal block + exportable PNG)
 - Collection / dex view
+- Milestone rewards (eggs at levels 5 / 10 / 20)
+
+### V2 — Social + Light Economy
+
+- Soft currency introduced (only now, after the relationship is proven)
 - Species-specific cosmetics
-- Light habitats
-
-### V2 — Social
-
-- Gifting eggs
-- Limited swaps
-- Friend bonuses
-- Shared hatch events
-- Team incubators
+- Web profile / shareable card URL
+- Gifting eggs, friend bonuses, shared hatch events
 - Seasonal / limited events
+- Team incubators
 
-### V3 — Systems
+### V3+ — Deferred
 
-- Breeding or fusion mechanics
-- Expanded evolution branches
-- Full marketplace
-- Cross-user economy
+Breeding / fusion, full marketplace, cross-user economy, real-money cosmetics.
+
+### Art strategy (V1 cost: zero)
+
+CC0 sprites from [OpenGameArt](https://opengameart.org/content/cc0-resources) → programmatic ASCII conversion via [`image-to-ascii`](https://www.npmjs.com/package/image-to-ascii) → ship both forms. Custom sprites later via [Piskel](https://www.piskelapp.com/) once the collection outgrows CC0 starters.
 
 ---
 
