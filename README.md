@@ -1,8 +1,8 @@
-# Tokeling
+# TokePal
 
 A coding companion ecosystem with many collectible species that hatch, grow, and evolve from real developer activity.
 
-Tokelings live in your terminal. You start with an egg. As you code, it grows. Over time it hatches into one of many species, levels up, evolves, and earns cosmetics — all driven by how you actually work, not by a separate game loop bolted on the side.
+TokePals live in your terminal. You start with an egg. As you code, it grows. Over time it hatches into one of many species, levels up, evolves, and earns cosmetics — all driven by how you actually work, not by a separate game loop bolted on the side.
 
 ---
 
@@ -25,9 +25,9 @@ Tokelings live in your terminal. You start with an egg. As you code, it grows. O
 
 ## What It Is
 
-Tokeling is a dev-native collectible creature system. You code, your Tokeling grows. It is not a game layered awkwardly on top of a coding tool — it is a lightweight companion that sits inside the developer workflow and reflects real activity back at you as personality, progress, and collection depth.
+TokePal is a dev-native collectible creature system. You code, your TokePal grows. It is not a game layered awkwardly on top of a coding tool — it is a lightweight companion that sits inside the developer workflow and reflects real activity back at you as personality, progress, and collection depth.
 
-The central mechanic: **token usage fuels XP and a soft currency**. XP makes a Tokeling grow. Currency lets you participate in the economy (cosmetics, shop items, eggs). Keeping these separate matters — if growth and spending are the same resource, users feel punished every time they buy something.
+The central mechanic: **token usage fuels XP and a soft currency**. XP makes a TokePal grow. Currency lets you participate in the economy (cosmetics, shop items, eggs). Keeping these separate matters — if growth and spending are the same resource, users feel punished every time they buy something.
 
 Species, evolution, and traits tie progression to *how* you work, not just *how much*. A debugging-heavy user and a shipping-heavy user should not end up with identical creatures.
 
@@ -45,17 +45,17 @@ The overall tone should be slightly mischievous, retro-inspired, and highly legi
 
 ## Early Thinking
 
-This section captures the initial design reasoning behind Tokelings — what the system should do, what it should avoid, and why. It is intentionally exploratory. Treat it as the design log, not the spec.
+This section captures the initial design reasoning behind TokePals — what the system should do, what it should avoid, and why. It is intentionally exploratory. Treat it as the design log, not the spec.
 
 ### Core Loop: XP and Currency
 
-Tokelings gain XP from token usage should absolutely be a core mechanic. It is elegant, intuitive, and directly tied to real behavior. But raw token spend cannot be the only driver, or users will just realize they are feeding a meter. The stronger version is: token usage is the main fuel, but the system also has drops, milestones, rarity, events, and choices layered on top.
+TokePals gain XP from token usage should absolutely be a core mechanic. It is elegant, intuitive, and directly tied to real behavior. But raw token spend cannot be the only driver, or users will just realize they are feeding a meter. The stronger version is: token usage is the main fuel, but the system also has drops, milestones, rarity, events, and choices layered on top.
 
 A strong foundation:
 
 - Token usage → **XP** (growth) + **soft currency** (spending).
 - Soft currency could be Token Dust, Shells, Bits, or Embers.
-- XP makes a Tokeling grow; currency lets users interact with the economy.
+- XP makes a TokePal grow; currency lets users interact with the economy.
 
 That separation is important. Growth and spending should not be the exact same thing, otherwise users feel punished for buying cosmetics or eggs because they are sacrificing progression. Caps and balancing on both sides.
 
@@ -76,7 +76,7 @@ Eggs should not be purely buyable from day one — hatching loses its magic if y
 
 ### Species Discovery and Evolution
 
-This is the emotional core. Tokelings should not just level; they should change in ways that reflect how the user works. V1 can start simple, but the architecture should support branching evolution later:
+This is the emotional core. TokePals should not just level; they should change in ways that reflect how the user works. V1 can start simple, but the architecture should support branching evolution later:
 
 - Debugging-heavy users
 - Shipping-heavy users
@@ -122,16 +122,16 @@ Interesting, but not for early versions. Breeding implies inheritance, rare comb
 
 **Good V3 idea. Bad V1 idea.**
 
-A simpler early substitute: **fusion events** or **paired incubations** — two Tokelings generate a special egg or a temporary variant, without a full breeding system.
+A simpler early substitute: **fusion events** or **paired incubations** — two TokePals generate a special egg or a temporary variant, without a full breeding system.
 
 ### Additional Features Worth Building
 
-- **Trait rolls and personality tags.** Each Tokeling could have 2–4 traits like Curious, Chaotic, Meticulous, Sleepy, Gremlin, Stable, Speedy. Affects flavor, idle animations, or evolution paths. Adds uniqueness within the same species.
-- **Session reactions.** After a coding session, the Tokeling reacts: happy bounce, sleepy face, excited spark, level-up burst. Tiny feature, big attachment impact.
+- **Trait rolls and personality tags.** Each TokePal could have 2–4 traits like Curious, Chaotic, Meticulous, Sleepy, Gremlin, Stable, Speedy. Affects flavor, idle animations, or evolution paths. Adds uniqueness within the same species.
+- **Session reactions.** After a coding session, the TokePal reacts: happy bounce, sleepy face, excited spark, level-up burst. Tiny feature, big attachment impact.
 - **Milestone rewards.** At levels 5, 10, 20, etc., users get something: an egg, a cosmetic, a title, a background, a species shard, an evolution item, or a special interaction. Level-ups should never feel empty.
 - **Collections and dex.** A Pokédex-style collection log. Even a simple "species discovered / evolutions unlocked / rare variants owned" view creates long-term goals.
 - **Limited events and seasonal drops.** One of the best retention levers later. Halloween eggs, bug week, refactor festival, open-source month.
-- **Creature pages and cards.** Every Tokeling should have a shareable card with species, level, traits, rarity, and evolution stage. This is where social spread happens.
+- **Creature pages and cards.** Every TokePal should have a shareable card with species, level, traits, rarity, and evolution stage. This is where social spread happens.
 - **Light habitats.** Not a whole Tamagotchi room, but a background or biome: terminal cave, repo forest, merge swamp, cloud citadel. Habitats can be collectible cosmetics too.
 
 ### Economy Warning
